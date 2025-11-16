@@ -1,4 +1,4 @@
-<h2><b>Shiva - Aplicação em Java para processamento e transformação de dados.</b></h2>
+<h2><b>Shiva - Aplicação em Java para processamento e tratamento de dados.</b></h2>
 
 <h3><b>📄 1. Descrição Geral</b></h3>
   <p>Esta aplicação Java implementa um fluxo de processamento e tratamento de dados. Ela realiza a leitura de dados de uma fonte CSV, em Excel, transforma-os conforme regras definidas e armazena o resultado em um banco de dados em MySQL, após isso, expõe as informações em uma aplicação web. 
