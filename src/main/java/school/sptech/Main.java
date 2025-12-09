@@ -16,7 +16,7 @@ public class Main {
                 DateTimeFormatter.ofPattern("EEEE, dd 'de' MMMM 'de' yyyy 'às' HH:mm:ss");
 
         try {
-            /*S3Reader s3 = new S3Reader();*/
+            S3Reader s3 = new S3Reader();
             InputStream arquivo = new FileInputStream(nomeArquivo);
 
 
