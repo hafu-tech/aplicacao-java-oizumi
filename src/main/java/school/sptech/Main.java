@@ -17,7 +17,8 @@ public class Main {
 
         try {
             S3Reader s3 = new S3Reader();
-            InputStream arquivo = new FileInputStream(nomeArquivo);
+            InputStream arquivo = s3.getFileFromS3("s3-raw-hafu", nomeArquivo);
+            
 
 
             LeitorExcel leitorExcel = new LeitorExcel();
