@@ -62,18 +62,18 @@ public class DAO {
 
     List<LogSistema> logs = java.util.stream.IntStream.rangeClosed(1, quantidade)
             .mapToObj(i -> new LogSistema(
-                    LocalDateTime.now().format(formatter), // data_hora
-                    "Linha " + i + " adicionada",          // descricao
-                    1,                                     // qtd_registros
-                    null                                   // fk_status
+                    LocalDateTime.now().format(formatter), 
+                    "Linha " + i + " adicionada",          
+                    1,                                    
+                    null                                   
             ))
             .toList();
 
     jdbcTemplate.batchUpdate(sql, logs, logs.size(), (ps, log) -> {
-        ps.setString(1, log.getData());            // CERTA
-        ps.setString(2, log.getDescricao());       // CERTA
-        ps.setInt(3, log.getQtdRegistros());       // DE ACORDO COM MAVEN
-        ps.setObject(4, log.getFkStatus());        // CERTA
+        ps.setString(1, log.getData());            
+        ps.setString(2, log.getDescricao());       
+        ps.setInt(3, log.getQtdRegistros());       
+        ps.setObject(4, log.getFkStatus());        
     });
 }
 
