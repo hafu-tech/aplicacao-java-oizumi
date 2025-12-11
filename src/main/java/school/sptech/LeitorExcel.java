@@ -56,7 +56,46 @@ public class LeitorExcel {
                 escola.setRede(row.getCell(5).getStringCellValue());
                 escola.setInseQuantidadeAlunos((int) row.getCell(6).getNumericCellValue());
                 escola.setValorInse(row.getCell(7).getNumericCellValue());
-                escola.setInseClassificacao2014(row.getCell(8).getStringCellValue());
+                if (row.getCell(8) == null || row.getCell(8).getCellType() != CellType.STRING) {
+                    escola.setInseClassificacao2014("não especificado");
+
+                } else {
+                    String valor = row.getCell(8).getStringCellValue().trim().toLowerCase();
+
+                    // Caso já venha como texto direto
+                    if (valor.equals("baixo")) {
+                        escola.setInseClassificacao2014("baixo");
+                    }
+                    else if (valor.equals("medio") || valor.equals("médio")) {
+                        escola.setInseClassificacao2014("médio");
+                    }
+                    else if (valor.equals("alto")) {
+                        escola.setInseClassificacao2014("alto");
+                    }
+
+                    // Caso venha como "grupo 1" a "grupo 8"
+                    else if (valor.matches("grupo\\s*[1-8]")) {
+                        String numeroStr = valor.replaceAll("\\D+", "");
+                        int numero = Integer.parseInt(numeroStr);
+
+                        if (numero >= 1 && numero <= 3) {
+                            escola.setInseClassificacao2014("baixo");
+                        }
+                        else if (numero >= 4 && numero <= 6) {
+                            escola.setInseClassificacao2014("médio");
+                        }
+                        else if (numero >= 7 && numero <= 8) {
+                            escola.setInseClassificacao2014("alto");
+                        }
+                        else {
+                            escola.setInseClassificacao2014("não especificado");
+                        }
+                    }
+
+                    else {
+                        escola.setInseClassificacao2014("não especificado");
+                    }
+                }
                 escola.setInseClassificacao2015(row.getCell(9).getStringCellValue());
                 escola.setRegiao(row.getCell(10).getStringCellValue());
 
