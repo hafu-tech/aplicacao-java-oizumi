@@ -48,7 +48,7 @@ public class DAO {
     public void salvarLogIndividual(LogSistema logSistema) {
         jdbcTemplate.update("""
             INSERT INTO Log_sistema
-            (descricao_log)
+            (descricao_log )
             VALUES (?)
         """,
                 logSistema.getDescricao()

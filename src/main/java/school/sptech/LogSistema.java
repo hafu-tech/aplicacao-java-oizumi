@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class LogSistema extends Log {
 
-    public LogSistema(Integer id, String data, String descricao, Integer qtdRegistros, Integer fkStatus) {
-        super(id, data, descricao, qtdRegistros, fkStatus);
+    public LogSistema(String data, String descricao, Integer qtdRegistros, Integer fkStatus) {
+        super( data, descricao, qtdRegistros, fkStatus);
     }
 
 }
