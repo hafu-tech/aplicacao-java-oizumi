@@ -57,7 +57,7 @@ public class LeitorExcel {
                 escola.setInseQuantidadeAlunos((int) row.getCell(6).getNumericCellValue());
                 escola.setValorInse(row.getCell(7).getNumericCellValue());
                 if (row.getCell(8) == null || row.getCell(8).getCellType() != CellType.STRING) {
-                    escola.setInseClassificacao2014("não especificado");
+                    escola.setInseClassificacao2014("Dado não especificado");
 
                 } else {
                     String valor = row.getCell(8).getStringCellValue().trim().toLowerCase();
@@ -88,12 +88,12 @@ public class LeitorExcel {
                             escola.setInseClassificacao2014("alto");
                         }
                         else {
-                            escola.setInseClassificacao2014("não especificado");
+                            escola.setInseClassificacao2014("Dado não especificado");
                         }
                     }
 
                     else {
-                        escola.setInseClassificacao2014("não especificado");
+                        escola.setInseClassificacao2014("Dado não especificado");
                     }
                 }
                 escola.setInseClassificacao2015(row.getCell(9).getStringCellValue());
