@@ -17,6 +17,7 @@ public class DAO {
     }
 
     public void salvarLista(List<Escola> escolas) {
+        int contador = 1;
         String sql = """
             INSERT INTO Escola
             (ano, id_municipio, id_escola, area, localizacao, rede,
